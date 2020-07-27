@@ -11,10 +11,12 @@ def load_library(file)
   emoticons = YAML.load_file(file)
   emoticons.each_with_object({}) do |(emoji_title, emoji_array), emoji_hash|
     emoji_array.each do |emoji|
+      binding.pry
       value_hash = {}
       value_hash[:english] = emoji_array[0]
       value_hash[:japanese] = emoji_array[1]
       emoji_hash[emoji_title] = value_hash
+      binding.pry
     end 
   end
 end
